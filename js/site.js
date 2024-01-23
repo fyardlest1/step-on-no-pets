@@ -60,7 +60,7 @@ function displayResults(palindrome) {
 
 
 
-// BONUS
+// BONUS 1:
 // determining whether a string is a palindrome using array notation
 function checkForPalindromeB(userInput) {
 	// turn the string into an array
@@ -85,6 +85,7 @@ function checkForPalindromeB(userInput) {
 	}
 }
 
+// BONUS 2:
 // check if the words can be compared to itself using reverse() array method
 function checkForPalindromeC(userInput) {
 	let resultStr = Array.from(userInput.toLowerCase())
