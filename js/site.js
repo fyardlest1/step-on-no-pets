@@ -5,7 +5,7 @@ function getValues() {
 	userInput = userInput.replace(/[^a-zA-Z0-9 ]/g, '');
 
 	if (userInput) {
-		let palindrome = checkForPalindromeC(userInput);
+		let palindrome = checkForPalindrome(userInput);
 		displayResults(palindrome);
 	} else if (userInput.length < 2) {
 		let alert = document.getElementById('alert')
@@ -89,7 +89,6 @@ function checkForPalindromeB(userInput) {
 function checkForPalindromeC(userInput) {
 	let resultStr = Array.from(userInput.toLowerCase())
 	resultStr = resultStr.reverse().join('')
-	console.log(resultStr)
 
 	if (resultStr == userInput.toLowerCase()) {
 		return resultStr.toLocaleLowerCase()
