@@ -85,7 +85,7 @@ function checkForPalindromeB(userInput) {
 	}
 }
 
-// check if the words can be compared to itself
+// check if the words can be compared to itself using reverse() array method
 function checkForPalindromeC(userInput) {
 	let resultStr = Array.from(userInput.toLowerCase())
 	resultStr = resultStr.reverse().join('')
