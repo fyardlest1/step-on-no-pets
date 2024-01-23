@@ -5,7 +5,7 @@ function getValues() {
 	userInput = userInput.replace(/[^a-zA-Z0-9 ]/g, '');
 
 	if (userInput) {
-		let palindrome = checkForPalindrome(userInput);
+		let palindrome = checkForPalindromeC(userInput);
 		displayResults(palindrome);
 	} else if (userInput.length < 2) {
 		let alert = document.getElementById('alert')
@@ -29,7 +29,7 @@ function checkForPalindrome(userInput) {
 	}
 
 	if (userInput.toLowerCase() == stringResult.toLowerCase()) {
-		return stringResult.toLocaleLowerCase()
+		return stringResult.toLowerCase()
 	}
 }
 
@@ -92,7 +92,7 @@ function checkForPalindromeC(userInput) {
 	resultStr = resultStr.reverse().join('')
 
 	if (resultStr == userInput.toLowerCase()) {
-		return resultStr.toLocaleLowerCase()
+		return resultStr.toLowerCase()
 	}
 }
 
