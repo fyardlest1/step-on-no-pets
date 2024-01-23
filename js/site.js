@@ -1,12 +1,18 @@
 // step 1: receiving and responding to the user's string
 function getValues() {
 	let userInput = document.getElementById('message').value.trim().split(' ').join('');
+	// replaces all special characters with '' (empty string) using the replace() method
+	userInput = userInput.replace(/[^a-zA-Z0-9]/g, '');
 
-	// Swal.fire({
-	// 	backdrop: false,
-	// 	title: 'StepOnNoPets',
-	// 	text: message,
-	// })
+	if (userInput.length < 2) {
+		Swal.fire({
+			icon: 'error',
+			backdrop: false,
+			title: 'Step-On-No-Pets',
+			text: 'Please, enter at least 2 characters',
+		})
+	}
+
 
 	let palindrome = checkForPalindrome(userInput);
 	displayResults(palindrome);
@@ -42,6 +48,8 @@ function displayResults(palindrome) {
 }
 
 
+
+// BONUS
 // determining whether a string is a palindrome using array notation
 function checkForPalindromeB(userInput) {
 	// turn the string into an array
