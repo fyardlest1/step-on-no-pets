@@ -18,7 +18,6 @@ function getValues() {
 			text: 'Please, enter at least 2 characters',
 		})
 	}
-
 }
 
 // step 2: determining whether a string is a palindrome
@@ -57,7 +56,7 @@ function displayResults(palindrome) {
 			alert.classList.replace('alert-success', 'alert-danger');
 		}
 		
-		alert.classList.remove('invisible');
+	alert.classList.remove('invisible');
 }
 
 
