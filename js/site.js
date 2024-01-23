@@ -2,9 +2,15 @@
 function getValues() {
 	let userInput = document.getElementById('message').value.trim().split(' ').join('');
 	// replaces all special characters with '' (empty string) using the replace() method
-	userInput = userInput.replace(/[^a-zA-Z0-9]/g, '');
+	userInput = userInput.replace(/[^a-zA-Z0-9 ]/g, '');
 
-	if (userInput.length < 2) {
+	if (userInput) {
+		let palindrome = checkForPalindrome(userInput);
+		displayResults(palindrome);
+	} else if (userInput.length < 2) {
+		let alert = document.getElementById('alert')
+		alert.classList.add('invisible');
+
 		Swal.fire({
 			icon: 'error',
 			backdrop: false,
@@ -13,12 +19,9 @@ function getValues() {
 		})
 	}
 
-
-	let palindrome = checkForPalindrome(userInput);
-	displayResults(palindrome);
 }
 
-// determining whether a string is a palindrome
+// step 2: determining whether a string is a palindrome
 function checkForPalindrome(userInput) {
 	let stringResult = ''
 	// using a decrementing for loop
@@ -32,19 +35,29 @@ function checkForPalindrome(userInput) {
 	return false
 }
 
-// displaying a message to the user to show whether their string is a palindrome or not
-function displayResults(palindrome) {	
+// step 3: displaying a message to the user to show 
+// whether their string is a palindrome or not
+function displayResults(palindrome) {
+	let alert = document.getElementById('alert');
+	
 	// put the HTML into the page
 	if (palindrome) {
+		document.getElementById('heading').innerHTML =
+		'Well done! You entered a Palindrome!';
+		
 		document.getElementById(
 			'result'
-		).innerHTML = `Your phrase reversed message is: ${palindrome}`;		
-	} else {
-		document.getElementById('result').innerHTML = 'Your phrase reversed message is not a palindrome';
-	}
-
-	let alert = document.getElementById('alert');
-	alert.classList.remove('invisible');
+			).innerHTML = `Your phrase reversed message is: ${palindrome}`;
+			
+			alert.classList.replace('alert-danger', 'alert-success');
+		} else {
+			document.getElementById('heading').innerHTML =
+				'Sorry My Friend!'
+			document.getElementById('result').innerHTML = 'Your phrase reversed message is not a palindrome';
+			alert.classList.replace('alert-success', 'alert-danger');
+		}
+		
+		alert.classList.remove('invisible');
 }
 
 
