@@ -5,7 +5,7 @@ function getValues() {
 	userInput = userInput.replace(/[^a-zA-Z0-9 ]/g, '');
 
 	if (userInput) {
-		let palindrome = checkForPalindrome(userInput);
+		let palindrome = checkForPalindromeC(userInput);
 		displayResults(palindrome);
 	} else if (userInput.length < 2) {
 		let alert = document.getElementById('alert')
@@ -31,7 +31,6 @@ function checkForPalindrome(userInput) {
 	if (userInput.toLowerCase() == stringResult.toLowerCase()) {
 		return stringResult.toLocaleLowerCase()
 	}
-	return false
 }
 
 // step 3: displaying a message to the user to show 
@@ -85,3 +84,17 @@ function checkForPalindromeB(userInput) {
 		return false
 	}
 }
+
+// check if the words can be compared to itself
+function checkForPalindromeC(userInput) {
+	let resultStr = Array.from(userInput.toLowerCase())
+	resultStr = resultStr.reverse().join('')
+	console.log(resultStr)
+
+	if (resultStr == userInput.toLowerCase()) {
+		return resultStr.toLocaleLowerCase()
+	}
+}
+
+// checkForPalindromeC('password')
+// checkForPalindromeC('tacocat')

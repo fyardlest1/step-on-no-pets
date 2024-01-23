@@ -150,7 +150,6 @@
 								if (userInput.toLowerCase() == stringResult.toLowerCase()) {
 									return stringResult.toLocaleLowerCase()
 								}
-								return false
 							}
 
 							// step 3: displaying a message to the user to show 
@@ -204,6 +203,17 @@
 									return newArray.toLowerCase()
 								} else {
 									return false
+								}
+							}
+
+							// check if the words can be compared to itself using reverse array method
+							function checkForPalindromeC(userInput) {
+								let resultStr = Array.from(userInput.toLowerCase())
+								resultStr = resultStr.reverse().join('')
+								console.log(resultStr)
+
+								if (resultStr == userInput.toLowerCase()) {
+									return resultStr.toLocaleLowerCase()
 								}
 							}
 						</code>
