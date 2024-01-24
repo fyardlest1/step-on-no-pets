@@ -77,10 +77,11 @@ function displayResults(results) {
 	).textContent = `You entered: ${results.input}`
 
 	// put the original message in the <p class="reversed-message"> element
-	templateCopy.querySelector('.reversed-message').textContent = `Your message reversed is: ${results.reversed}`;
+	templateCopy.querySelector('.reversed-message').textContent = 
+	`Your message reversed is: ${results.reversed}`;
 
 	// add our copy of the template tag to the div id "results"
-	document.getElementById('results').prepend(templateCopy)
+	document.getElementById('results').prepend(templateCopy);
 }
 
 
