@@ -145,12 +145,8 @@
 							Check It Out!
 						</button>
 					</form>
-					<div class="my-3">
-						<div class="alert fade show invisible" id="alert" role="alert">
-							<h4 class="alert-heading" id="heading"></h4>
-							<hr />
-							<p class="fs-5">Your phrase reversed message is: ...</p>
-						</div>
+					<div class="my-3" id="results">
+						<!-- Alert template goes here -->
 					</div>
 				</div>
 			</div>
@@ -215,6 +211,29 @@
 				</div>
 			</div>
 		</footer>
+
+		<!-- SUCCESS TEMPLATE -->
+		<template id="success-template">
+			<div class="alert fade show alert-success">
+				<h4 class="alert-heading">
+					Well done! You entered a Palindrome!
+				</h4>
+				<hr />
+				<p class="fs-5 input-message"></p>
+				<p class="fs-5 reversed-message"></p>
+			</div>
+		</template>
+		<!-- FAILURE TEMPLATE -->
+		<template id="danger-template">
+			<div class="alert fade show alert-danger">
+				<h4 class="alert-heading">
+					Sorry My Friend! It's not a palindrome.
+				</h4>
+				<hr />
+				<p class="fs-5 input-message"></p>
+				<p class="fs-5 reversed-message"></p>
+			</div>
+		</template>
 
 		<!-- Bootstrap Script -->
 		<script

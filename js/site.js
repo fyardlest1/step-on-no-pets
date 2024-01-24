@@ -57,30 +57,30 @@ function checkForPalindrome(input) {
 // step 4: displaying a message to the user to show 
 // whether their string is a palindrome or not
 function displayResults(results) {
-	let alert = document.getElementById('alert');
-	alert.classList.remove('invisible', 'alert-success', 'alert-danger');
+	// get a copy of the template
+	let template
 
 	if (results.isPalindrome) {
-		// make the alert green
-		alert.classList.add('alert-success');
-		// Changing the header message for success
-		alert.querySelector('h4').innerHTML =
-		'Well done! You entered a Palindrome!';
+		// - if it is a palindrome, select the success template
+		template = document.getElementById('success-template')
 	} else {
-		// make the alert red
-		alert.classList.add('alert-danger');
-		// Changing the header message for failure
-		alert.querySelector('h4').innerHTML = "Sorry My Friend! It's not a palindrome";		
+		// - if it is NOT, select the danger template
+		template = document.getElementById('danger-template')
 	}
 
-	let resultInput = results.input.replace(/[^a-zA-Z0-9 ]/g, '')
-	let resultReversed = results.reversed.replace(/[^a-zA-Z0-9 ]/g, '')
+	// get a new copy of the template's contents
+	let templateCopy = template.content.cloneNode(true)
 
-	// display the user input vs the reverse message
-	alert.querySelector(
-		'p'
-	).innerHTML = `Your message was: <b>${resultInput}</b><br />Your reversed message is: <b>${resultReversed}</b>`
-	// alert.querySelector('p').textContent = `Your message was: ${results.input} \nYour reversed message is: ${results.reversed}`;
+	// put the original message in the <p class="input-message"> element
+	templateCopy.querySelector(
+		'.input-message'
+	).textContent = `You entered: ${results.input}`
+
+	// put the original message in the <p class="reversed-message"> element
+	templateCopy.querySelector('.reversed-message').textContent = `Your message reversed is: ${results.reversed}`;
+
+	// add our copy of the template tag to the div id "results"
+	document.getElementById('results').prepend(templateCopy)
 }
 
 
