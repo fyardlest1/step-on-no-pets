@@ -3,6 +3,10 @@ function getValue() {
 	let userInput = document.getElementById('message').value;
 
 	if (userInput.length < 2) {
+		// making the alert invisible if already showing on the screen
+		let alert = document.getElementById('alert')
+		alert.classList.add('invisible');
+
 		Swal.fire({
 			icon: 'error',
 			backdrop: false,
