@@ -265,31 +265,139 @@
 				<!-- Code explanation -->
 				<div class="col-12 col-lg-4">
 					<h4>How the code works behind the scene!</h4>
+					<p>
+						Before jumping into VSCode and starting to write code, I
+						needed a plan and at that moment I started by asking
+						myself questions about the problem that I needed to
+						solve and I managed to divide the problem into steps.
+						For this problem I actually developed four steps.
+					</p>
+					<ul>
+						<li>
+							Receiving the user input and responding to the
+							user's back with the final answer.
+						</li>
+						<li>
+							Creating a function that will reverse the giving
+							string.
+						</li>
+						<li>
+							Determining whether a string is a palindrome or not.
+						</li>
+						<li>
+							And finally, displaying a message to the user using
+							our HTML page that was build specially for this
+							effect.
+						</li>
+					</ul>
+					<h5>The four steps in action!</h5>
 					<h5>
 						<code>getValue()</code>
 					</h5>
 					<p>
-						The <code>getValue</code> function ...
+						So, regarding this function, it only collects the text
+						that we need and returns the result. To make my task
+						easier I used an object in which I store useful
+						information to be able to access it if necessary or at
+						least use it in the function which has the task of
+						displaying the result, in this case
+						<code>displayResults</code> which you will see later.
+						Finally, to ensure some of the validity of the
+						information we receive from the
+						<code>getValue</code> function, I use the help of
+						sweetalert2.
 					</p>
 					<h5>
 						<code>reverseString()</code>
 					</h5>
 					<p>
-						The <code>reverseString</code> function ...
+						The <code>reverseString</code> function has only one
+						responsibility: reverse the received text. Note that
+						there are several ways to do this, and many developers
+						would try to use the array method, but as far as I am
+						concerned I know that strings have one thing in common
+						with arrays, and that is the indexing. Which allows me
+						to access each character without writing too much code.
+						To do this I create an empty string variable just like I
+						could do by creating an empty array. I use a for loop to
+						access the
+						<strong><em>length of the message -1</em></strong
+						>, knowing that the indexing of the string starts from
+						0, set my condition for the loop to then decrement by 1
+						at each iteration and concatenate the letters in my
+						empty string variable. And finally return this variable
+						for later use.
 					</p>
 					<h5>
 						<code>checkForPalindrome()</code>
 					</h5>
 					<p>
-						The <code>checkForPalindrome</code> function ...
+						The <code>checkForPalindrome</code> function is
+						responsible for taking an input and converting it to
+						lowercase, then removing the symbols that could
+						accompany the text to replace them with an empty string,
+						using the buildin javascript method
+						<code>replace</code> and a regular expression. In this
+						function we call our <code>reverseString</code> which
+						has the sole purpose of turning the text backward, then
+						we ensure that the two texts are identical by comparing
+						the input that the
+						<code>checkForPalindrome</code> function receives with
+						that returned by the
+						<code>reverseString</code> function, so if these two are
+						the same it's a palindrome. At the end we return the
+						result for later use.
 					</p>
 					<h5>
 						<code>displayResults()</code>
 					</h5>
 					<p>
-						The <code>displayResults</code> function ...
+						The <code>displayResults</code> function aims to display
+						the long-awaited result to the user and for this we use
+						a template tag. Before going any further, what is this
+						famous template tag in HTML?
 					</p>
-					<h5>That's kind of cool, right? <span class="fs-4">&#128526;</span></h5>
+					<h6>HTML <code>&lt;template></code> Tag:</h6>
+					<p>
+						The <code>template</code> tag is an HTML5 element that
+						allows you to hold client-side content that you don't
+						want to be rendered when the page loads. The content
+						inside a <code>template</code> tag is not displayed, and
+						it can be used as a template to clone and insert into
+						the document later using JavaScript. This is
+						particularly useful for storing reusable content that
+						can be dynamically added to the DOM.
+					</p>
+					<p>
+						Let's get back to our displayResults function! We access
+						an alert that we created using our template tag, then
+						remove the class that made our alert invisible in order
+						to display the result and change the classes that allow
+						us to change the colors when the message is a palindrome
+						or not. So if the message is a palindrome we display a
+						success message and otherwise we display a completely
+						different message using our <code>if</code> statement.
+						At this level, I also prefer to remove the symbols that
+						were passed with the text during display by using the
+						<code>regular expression</code>. In the end, when displaying the
+						alert I present the input message and the reversed
+						message to prove that the message is a palindrome or
+						not.
+					</p>
+					<h5>BONUS SECTION!!!</h5>
+					<p>
+						In the bonus section below I gave you other ways to do
+						the same thing, which proves that in programming there
+						are many ways to solve a problem, and that it all
+						depends on your approach. This is why you should always
+						try to divide the problem into small parts that will
+						help you achieve your goal. See the bonus section to
+						test the codes and try to understand what is happening.
+					</p>
+					<h5>
+						That's kind of cool, right?
+						<span class="fs-4">&#128526;</span>
+					</h5>
 				</div>
 			</div>
 		</main>
